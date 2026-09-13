@@ -17,7 +17,7 @@
       <div class="menu__marca">
         <p class="menu__kicker">TSE · Prestação de contas</p>
         <h1 class="menu__logo">Financiamento de campanha</h1>
-        <p class="menu__ano">Presidência 2026 · carga 12/09</p>
+        <p class="menu__ano">Presidência 2026 · despesas <span id="periodoDespesas">—</span></p>
       </div>
 
       <nav class="menu__nav" aria-label="Seções do painel">
@@ -26,16 +26,17 @@
         </button>
         <button type="button" class="menu__item" data-view="candidatos">Candidatos</button>
         <button type="button" class="menu__item" data-view="comparar">Comparar</button>
-        <button type="button" class="menu__item" data-view="metodo">Metodologia</button>
       </nav>
 
-      <p class="menu__nota">O painel mede. Não interpreta.</p>
+      <p class="menu__nota">
+        Este painel não influencia seu voto. Só mostra valores publicados pelo TSE.
+      </p>
     </aside>
 
     <div class="app">
       <header class="topo">
         <div>
-          <p class="topo__olho">Transparência · mesmo critério para todos</p>
+          <p class="topo__olho">Fonte: Dados Abertos do TSE · sem indicação de voto</p>
           <h2 class="topo__titulo">Análise de despesa contratada declarada</h2>
         </div>
         <div class="filtros-topo">
@@ -63,9 +64,10 @@
       </header>
 
       <p class="aviso" role="note">
-        <strong>Prestação parcial.</strong>
-        Valores declarados até a data da carga — não são o gasto total da campanha.
-        Fonte: <a href="https://dadosabertos.tse.jus.br/dataset/prestacao-de-contas-eleitorais-2026">Dados Abertos do TSE</a>.
+        <strong>Só o que o TSE divulgou.</strong>
+        Números de despesa contratada declarada até a data da carga — não são o gasto
+        total da campanha e não são recomendação de voto. Fonte:
+        <a href="https://dadosabertos.tse.jus.br/dataset/prestacao-de-contas-eleitorais-2026">Dados Abertos do TSE</a>.
       </p>
 
       <section id="view-visao" class="view">
@@ -146,30 +148,6 @@
           </div>
           <p class="erro" id="erroComparar" hidden></p>
           <div id="resultadoComparacao" class="comparacao" hidden></div>
-        </article>
-      </section>
-
-      <section id="view-metodo" class="view" hidden>
-        <article class="card">
-          <h3>Metodologia desta carga</h3>
-          <ul class="metodo">
-            <li>
-              Arquivo consolidado <code>BRASIL</code>: contém duas eleições; o filtro
-              <code>CD_CARGO = 1</code> isola a disputa presidencial.
-            </li>
-            <li>
-              <code>SQ_DESPESA</code> não é chave única. Deduplicar por ele apagaria
-              lançamentos legítimos (cerca de R$ 4,2 mi nesta base).
-            </li>
-            <li>
-              Relatório Financeiro e Parcial não se sobrepõem: nenhum candidato aparece
-              nos dois. Os totais podem ser somados.
-            </li>
-          </ul>
-          <p class="rodape-card">
-            Sprint 1 — números em <code>js/data.js</code>. Período das despesas:
-            <span id="periodoDespesas">—</span>.
-          </p>
         </article>
       </section>
     </div>

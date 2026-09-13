@@ -3,7 +3,35 @@
 
   const moeda = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
   const inteiro = new Intl.NumberFormat('pt-BR');
-  const AZUIS = ['#1d4ed8', '#2563eb', '#3b82f6', '#60a5fa', '#0ea5e9', '#0284c7', '#1e3a8a', '#38bdf8'];
+  const PALETA = [
+    '#2563eb',
+    '#f59e0b',
+    '#10b981',
+    '#8b5cf6',
+    '#06b6d4',
+    '#ec4899',
+    '#84cc16',
+    '#f97316',
+    '#6366f1',
+    '#14b8a6',
+    '#a855f7',
+    '#eab308',
+  ];
+
+  const NOME_POPULAR = {
+    '280002551544': 'Flávio Bolsonaro',
+    '280002551932': 'Ronaldo Caiado',
+    '280002542548': 'Lula',
+    '280002539826': 'Romeu Zema',
+    '280002540694': 'Renan Santos',
+    '280002548139': 'Wilson Grassi',
+    '280002541457': 'Hertz Dias',
+    '280002551547': 'Augusto Cury',
+    '280002551975': 'Edmilson Costa',
+    '280002552487': 'Rui Costa Pimenta',
+    '280002552484': 'Clariana Barão',
+    '280002553884': 'Pablo Marçal',
+  };
 
   const el = (id) => document.getElementById(id);
   const graficos = {};
@@ -52,14 +80,18 @@
         if (estado.partido && c.sg_partido !== estado.partido) return false;
         if (!candidatoTemPrestacao(c, estado.prestacao)) return false;
         if (!termo) return true;
-        const alvo = `${c.nm_candidato} ${c.nr_candidato} ${c.sg_partido} ${c.nm_partido}`.toLowerCase();
+        const alvo = `${nomePopular(c)} ${c.nm_candidato} ${c.nr_candidato} ${c.sg_partido} ${c.nm_partido}`.toLowerCase();
         return alvo.includes(termo);
       })
       .sort((a, b) => b.total - a.total || a.nm_candidato.localeCompare(b.nm_candidato, 'pt-BR'));
   }
 
+  function nomePopular(c) {
+    return NOME_POPULAR[c.sq_candidato] || c.nm_candidato;
+  }
+
   function rotuloCandidato(c) {
-    return c.nm_candidato.split(' ').slice(0, 2).join(' ');
+    return nomePopular(c);
   }
 
   function origensDoRecorte(lista) {
@@ -173,7 +205,7 @@
 
     graficos.origens = new Chart(el('graficoOrigens'), {
       type: 'doughnut',
-      data: { labels: [], datasets: [{ data: [], backgroundColor: AZUIS.concat('#f97316', '#e11d48') }] },
+      data: { labels: [], datasets: [{ data: [], backgroundColor: PALETA, borderColor: '#fff', borderWidth: 2 }] },
       options: {
         ...padraoGrafico(),
         plugins: {
@@ -187,7 +219,7 @@
 
     graficos.partidos = new Chart(el('graficoPartidos'), {
       type: 'bar',
-      data: { labels: [], datasets: [{ data: [], backgroundColor: AZUIS }] },
+      data: { labels: [], datasets: [{ data: [], backgroundColor: PALETA, borderRadius: 6 }] },
       options: {
         ...padraoGrafico(),
         scales: {
@@ -218,7 +250,9 @@
         datasets: [
           {
             data: valores,
-            backgroundColor: doughnut ? AZUIS.concat('#f97316', '#e11d48') : AZUIS[0],
+            backgroundColor: PALETA,
+            borderColor: doughnut ? '#fff' : undefined,
+            borderWidth: doughnut ? 2 : 0,
             borderRadius: doughnut ? 0 : 6,
           },
         ],
@@ -314,7 +348,7 @@
         .forEach((c) => {
           const opcao = document.createElement('option');
           opcao.value = c.sq_candidato;
-          opcao.textContent = `${c.nm_candidato} (${c.sg_partido})`;
+          opcao.textContent = `${nomePopular(c)} (${c.sg_partido})`;
           select.appendChild(opcao);
         });
       select.value = atual;
@@ -394,12 +428,12 @@
     caixa.innerHTML = `
       <div class="comparacao__pares">
         <article>
-          <h3>${a.nm_candidato}</h3>
+          <h3>${nomePopular(a)}</h3>
           <p>${a.sg_partido} · nº ${a.nr_candidato}</p>
           <p class="comparacao__valor">${moeda.format(a.total)}</p>
         </article>
         <article>
-          <h3>${b.nm_candidato}</h3>
+          <h3>${nomePopular(b)}</h3>
           <p>${b.sg_partido} · nº ${b.nr_candidato}</p>
           <p class="comparacao__valor">${moeda.format(b.total)}</p>
         </article>
@@ -432,7 +466,7 @@
       artigo.innerHTML = `
         <div class="candidato__topo">
           <div>
-            <p class="candidato__nome">${c.nm_candidato}</p>
+            <p class="candidato__nome">${nomePopular(c)}</p>
             <p class="candidato__meta">nº ${c.nr_candidato} · ${c.sg_partido} · ${tipo}</p>
           </div>
           <div>
