@@ -15,7 +15,7 @@ Disciplina de Projeto de Software do curso de analise e desenvolvimento de siste
 - rep do projeto: https://github.com/cabralzin1/Projeto-faculdade/
 - Vídeo da Sprint 1: _(colar link do YouTube ou Drive)_
 
-## Como executar (Sprint 1) teste
+## Como executar front
 
 Não há dependências, build ou instalação. Abra `painel/index.html` no navegador:
 
