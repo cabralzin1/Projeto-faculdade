@@ -11,8 +11,9 @@ Projeto da disciplina de Projeto de Software.
 | ---- | -- |
 | _Guilherme Cabral de Oliveira_ | _2403377_ |
 
-- Board do projeto: _https://app.clickup.com/90171389193/v/li/901715205335 / https://github.com/cabralzin1/Projeto-faculdade/
+- Board do projeto: _https://app.clickup.com/90171389193/v/li/901715205335 
 - Vídeo da Sprint 1: _(colar link do YouTube ou Drive)_
+- rep do projeto: https://github.com/cabralzin1/Projeto-faculdade/
 
 ## Como executar
 
