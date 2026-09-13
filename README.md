@@ -20,7 +20,6 @@ Disciplina de Projeto de Software do curso de analise e desenvolvimento de siste
 Não há dependências, build ou instalação. Abra `painel/index.html` no navegador:
 
 ```bash
-cd painel
 start index.html
 ```
 
