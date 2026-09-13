@@ -1,9 +1,9 @@
 # Projeto Faculdade
-Sistema web para abertura e acompanhamento de requisições de compra internas.
-Um colaborador registra o que precisa comprar, informa centro de custo e justificativa,
-e a requisição entra na fila de aprovação do responsável.
+Painel com a **despesa contratada declarada** pelos candidatos à Presidência,
+a partir dos Dados Abertos do TSE. O painel **mede**, não opina: todos os
+candidatos recebem o mesmo tratamento.
 
-Projeto da disciplina de Projeto de Software.
+Disciplina de Projeto de Software do curso de analise e desenvolvimento de sistemas
 
 ## Integrantes
 
@@ -12,8 +12,8 @@ Projeto da disciplina de Projeto de Software.
 | _Guilherme Cabral de Oliveira_ | _2403377_ |
 
 - Board do projeto: _https://app.clickup.com/90171389193/v/li/901715205335 
-- Vídeo da Sprint 1: _(colar link do YouTube ou Drive)_
 - rep do projeto: https://github.com/cabralzin1/Projeto-faculdade/
+- Vídeo da Sprint 1: _(colar link do YouTube ou Drive)_
 
 ## Como executar (Sprint 1) teste
 
@@ -31,23 +31,22 @@ Testado em Chrome, Edge e no Brave.
 ```
 painel/
 ├── index.html          estrutura da página
-├── css/style.css       estilos
+├── css/page.css       estilos
 ├── js/
-│   ├── data.js         camada de dados (carga TSE, na Sprint 2 vira API)
-│   └── app.js          camada de apresentação: filtros, ordenação, comparação, validação
+│   ├── data.js         camada de dados (carga TSE)
+│   └── site.js          camada de apresentação: filtros, ordenação, comparação, validação
 ```
 
 ## Funcionalidades por sprint
 
 ### Sprint 1 — Front-end (entrega 14/09)
 
-- [x] Primeira visão: despesa declarada por candidato (valor + lançamentos)
-- [x] Resumo da carga: total, quantidade de candidatos, lançamentos e data de geração do TSE
-- [x] Ressalva de prestação parcial visível junto dos números
-- [x] Busca, filtro por partido e por tipo de prestação, ordenação
-- [x] Expansão das origens de despesa de cada candidato
-- [x] Comparação entre dois candidatos com o mesmo critério, com validação no front
-- [x] Metodologia dos três achados da carga (BRASIL, SQ_DESPESA, tipos de prestação)
+- [x] primeira visão: despesa declarada por candidato (valor + lançamentos)
+- [x] resumo da carga: total, quantidade de candidatos, lançamentos e data de geração do TSE
+- [x] prestação parcial visível junto dos números
+- [x] busca, filtro por partido e por tipo de prestação, ordenação
+- [x] comparação entre dois candidatos com o mesmo critério, com validação no front (nao aparecer o candidato x duas vezes - in process)
+- [x] metodologia dos três achados da carga (BRASIL, SQ_DESPESA, tipos de prestação)
 
 ### Sprint 2 — Back-end (entrega 13/10)
 
@@ -57,7 +56,7 @@ painel/
 
 ### Sprint 3 — Banco de dados (entrega 08/11)
 
-- [ ] Modelo dimensional já esboçado em `dados/02_carregar.py`
+- [ ] Modelo dimensional 
 - [ ] Persistência em SQLite e views de apoio ao painel
 - [ ] Controle de qualidade: contagem de registros e soma por origem
 
