@@ -15,72 +15,59 @@ Projeto da disciplina de Projeto de Software.
 - Vídeo da Sprint 1: _(colar link do YouTube ou Drive)_
 - rep do projeto: https://github.com/cabralzin1/Projeto-faculdade/
 
-## Como executar
+## Como executar (Sprint 1) teste
 
-Não há dependências, build ou instalação. Basta abrir o arquivo `index.html` no navegador:
+Não há dependências, build ou instalação. Abra `painel/index.html` no navegador:
 
 ```bash
-git clone <url-do-repositorio>
-cd portal-requisicoes
-# abra index.html no navegador (duplo clique ou):
-xdg-open index.html   # Linux
-open index.html       # macOS
-start index.html      # Windows
+cd painel
+start index.html
 ```
 
-Testado em Chrome, Edge e Firefox.
+Testado em Chrome, Edge e no Brave.
 
 ## Arquitetura
 
-O projeto segue três camadas, entregues progressivamente ao longo das sprints.
-
 ```
-portal-requisicoes/
+painel/
 ├── index.html          estrutura da página
 ├── css/style.css       estilos
 ├── js/
-│   ├── data.js         camada de dados (hoje em memória, na Sprint 2 vira chamada à API)
-│   └── app.js          camada de apresentação: validação, listagem, filtros
-└── docs/               roteiro do vídeo e material de apoio
+│   ├── data.js         camada de dados (carga TSE, na Sprint 2 vira API)
+│   └── app.js          camada de apresentação: filtros, ordenação, comparação, validação
 ```
-
-A separação entre `data.js` e `app.js` é proposital. Quando a API entrar na Sprint 2,
-somente a implementação de `Dados` muda; a interface continua igual.
 
 ## Funcionalidades por sprint
 
-### Sprint 1 — Front-end (entrega 14/09) ✅
+### Sprint 1 — Front-end (entrega 14/09)
 
-- [x] Formulário de abertura de requisição com centro de custo e categoria
-- [x] Inclusão e remoção dinâmica de itens, com cálculo de subtotal e total
-- [x] Validação de campos obrigatórios, data retroativa e requisição sem itens
-- [x] Listagem das requisições com situação (pendente / aprovada / reprovada)
-- [x] Filtro por situação e expansão dos itens de cada requisição
-- [x] Painel com quantidade e valor total aguardando aprovação
+- [x] Primeira visão: despesa declarada por candidato (valor + lançamentos)
+- [x] Resumo da carga: total, quantidade de candidatos, lançamentos e data de geração do TSE
+- [x] Ressalva de prestação parcial visível junto dos números
+- [x] Busca, filtro por partido e por tipo de prestação, ordenação
+- [x] Expansão das origens de despesa de cada candidato
+- [x] Comparação entre dois candidatos com o mesmo critério, com validação no front
+- [x] Metodologia dos três achados da carga (BRASIL, SQ_DESPESA, tipos de prestação)
 
 ### Sprint 2 — Back-end (entrega 13/10)
 
-- [ ] API REST com endpoints de criação, consulta e listagem de requisições
-- [ ] Geração do número sequencial da requisição no servidor
-- [ ] Regras de negócio: limite de alçada por centro de custo
-- [ ] Endpoint de aprovação e reprovação com registro do aprovador
-- [ ] Substituição dos dados mockados por chamadas `fetch` à API
+- [ ] API REST com listagem de candidatos e detalhe por origem
+- [ ] Substituição de `data.js` por `fetch()` nas funções de `Dados`
+- [ ] Recálculo a partir do banco, sem o JSON estático
 
 ### Sprint 3 — Banco de dados (entrega 08/11)
 
-- [ ] Modelagem relacional: requisição, item, centro de custo, usuário, aprovação
-- [ ] Persistência das requisições e do histórico de mudanças de situação
-- [ ] Consultas de apoio: gasto por centro de custo e por categoria
-- [ ] Script de criação do banco e carga inicial
+- [ ] Modelo dimensional já esboçado em `dados/02_carregar.py`
+- [ ] Persistência em SQLite e views de apoio ao painel
+- [ ] Controle de qualidade: contagem de registros e soma por origem
 
-### Entrega final — Sistema integrado (22/11)
+### Entrega final — Painel integrado (22/11)
 
-- [ ] Autenticação e perfis (solicitante e aprovador)
-- [ ] Fluxo completo de aprovação ponta a ponta
-- [ ] Painel de indicadores: valor aprovado no mês, tempo médio de aprovação
-- [ ] Exportação da requisição aprovada para o setor de compras
+- [ ] Filtro por período e categoria alimentado pelo banco
+- [ ] Atualização da carga com as contas finais pós-pleito
+- [ ] Documentação de metodologia e limitações
 
-## Situação atual
+## O que os números representam
 
-Sprint 1 concluída. Os dados são carregados de `js/data.js` e mantidos em memória durante
-a sessão — recarregar a página restaura a carga inicial.
+Despesa contratada declarada até a data da carga (`DT_GERACAO` do arquivo TSE).
+Não é o gasto total da campanha. Recorte: `CD_CARGO = 1` no consolidado BRASIL.
