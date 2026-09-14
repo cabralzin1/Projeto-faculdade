@@ -13,7 +13,7 @@ Disciplina de Projeto de Software do curso de analise e desenvolvimento de siste
 
 - Board do projeto: _https://app.clickup.com/90171389193/v/li/901715205335 
 - rep do projeto: https://github.com/cabralzin1/Projeto-faculdade/
-- Vídeo da Sprint 1: _(colar link do YouTube ou Drive)_
+- Vídeo da Sprint 1: _https://youtu.be/O573eEB9m1I_
 
 ## Como executar front
 
