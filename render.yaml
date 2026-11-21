@@ -4,7 +4,11 @@ services:
     runtime: python
     plan: free
     buildCommand: |
+      pip install -r requirements.txt
       mkdir -p Dados
       python -c "import urllib.request; urllib.request.urlretrieve('https://github.com/cabralzin1/Projeto-faculdade/releases/download/v1.0.0-entrega/campanha.db', 'Dados/campanha.db')"
-    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    startCommand: python -m uvicorn backend.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.4
