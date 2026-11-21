@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="1400" height="900" fill="#ffffff"/>
+<text x="700.0" y="36" text-anchor="middle" font-size="24" font-weight="700" fill="#1a202c">Diagrama de Classes</text>
+<text x="700.0" y="60" text-anchor="middle" font-size="13" fill="#4a5568">Arquitetura do painel (front + API + banco)</text>
+<defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/></marker>
+            <marker id="arrow-dash" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#718096"/></marker>
+            </defs>
+<rect x="60" y="100" width="340" height="300" rx="8" fill="#f7fafc" stroke="#2b6cb0" stroke-width="1.5"/>
+<path d="M68,100 L392,100 Q400,100 400,108 L400,128 L60,128 L60,108 Q60,100 68,100 Z" fill="#2c5282"/>
+<text x="230.0" y="119" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Dados  (JS/data.js)</text>
+<text x="72" y="144" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">CARGA</text>
+<text x="72" y="163" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">BASE</text>
+<text x="72" y="182" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">CARGO</text>
+<text x="72" y="201" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">CARGOS</text>
+<text x="72" y="220" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">---</text>
+<text x="72" y="239" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">init(cargo)</text>
+<text x="72" y="258" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">obterCarga()</text>
+<text x="72" y="277" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">listarCandidatos()</text>
+<text x="72" y="296" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">filtrarPorBanco()</text>
+<text x="72" y="315" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">detalheCandidato(sq)</text>
+<text x="72" y="334" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">listarCargos()</text>
+<text x="72" y="353" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">partidos(cargo)</text>
+<rect x="60" y="500" width="360" height="300" rx="8" fill="#f7fafc" stroke="#2b6cb0" stroke-width="1.5"/>
+<path d="M68,500 L412,500 Q420,500 420,508 L420,528 L60,528 L60,508 Q60,500 68,500 Z" fill="#2c5282"/>
+<text x="240.0" y="519" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">SiteController  (JS/site.js)</text>
+<text x="72" y="544" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">estado</text>
+<text x="72" y="563" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">graficos</text>
+<text x="72" y="582" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">---</text>
+<text x="72" y="601" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">iniciar()</text>
+<text x="72" y="620" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">atualizarGraficos()</text>
+<text x="72" y="639" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">desenharLista()</text>
+<text x="72" y="658" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">desenharComparacao()</text>
+<text x="72" y="677" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">desenharPartidos()</text>
+<text x="72" y="696" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">popularCargos()</text>
+<rect x="520" y="100" width="380" height="340" rx="8" fill="#f7fafc" stroke="#2f855a" stroke-width="1.5"/>
+<path d="M528,100 L892,100 Q900,100 900,108 L900,128 L520,128 L520,108 Q520,100 528,100 Z" fill="#2f855a"/>
+<text x="710.0" y="119" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">API  (backend/main.py)</text>
+<text x="532" y="144" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">app</text>
+<text x="532" y="163" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">---</text>
+<text x="532" y="182" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">carga()</text>
+<text x="532" y="201" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">candidatos()</text>
+<text x="532" y="220" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">candidato()</text>
+<text x="532" y="239" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">filtros()</text>
+<text x="532" y="258" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">cargos()</text>
+<text x="532" y="277" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">partidos()</text>
+<text x="532" y="296" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">qc()</text>
+<rect x="520" y="520" width="300" height="220" rx="8" fill="#f7fafc" stroke="#2f855a" stroke-width="1.5"/>
+<path d="M528,520 L812,520 Q820,520 820,528 L820,548 L520,548 L520,528 Q520,520 528,520 Z" fill="#2f855a"/>
+<text x="670.0" y="539" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">DB  (backend/db.py)</text>
+<text x="532" y="564" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">DB_PATH</text>
+<text x="532" y="583" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">SCHEMA_PATH</text>
+<text x="532" y="602" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">---</text>
+<text x="532" y="621" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">conectar(create)</text>
+<text x="532" y="640" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">aplicar_schema(conn)</text>
+<text x="532" y="659" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">garantir_qc(conn)</text>
+<rect x="960" y="520" width="360" height="260" rx="8" fill="#f7fafc" stroke="#2f855a" stroke-width="1.5"/>
+<path d="M968,520 L1312,520 Q1320,520 1320,528 L1320,548 L960,548 L960,528 Q960,520 968,520 Z" fill="#2f855a"/>
+<text x="1140.0" y="539" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">ETL  (backend/etl.py)</text>
+<text x="972" y="564" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">RAIZ</text>
+<text x="972" y="583" font-size="12" font-weight="normal" fill="#718096" text-anchor="start">NULO</text>
+<text x="972" y="602" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">---</text>
+<text x="972" y="621" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">reconstruir(csv, cargo, dt)</text>
+<text x="972" y="640" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">_detectar(path)</text>
+<text x="972" y="659" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">_num(br)</text>
+<rect x="960" y="100" width="360" height="240" rx="8" fill="#f7fafc" stroke="#553c9a" stroke-width="1.5"/>
+<path d="M968,100 L1312,100 Q1320,100 1320,108 L1320,128 L960,128 L960,108 Q960,100 968,100 Z" fill="#553c9a"/>
+<text x="1140.0" y="119" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Candidato</text>
+<text x="972" y="144" font-size="12" font-weight="700" fill="#b7791f" text-anchor="start">sq_candidato</text>
+<text x="972" y="163" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">nm_candidato</text>
+<text x="972" y="182" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">nr_candidato</text>
+<text x="972" y="201" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">sg_partido</text>
+<text x="972" y="220" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">cd_cargo</text>
+<text x="972" y="239" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">total</text>
+<text x="972" y="258" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">lancamentos</text>
+<text x="972" y="277" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">origens</text>
+<text x="972" y="296" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">prestacoes</text>
+<rect x="960" y="360" width="360" height="240" rx="8" fill="#f7fafc" stroke="#553c9a" stroke-width="1.5"/>
+<path d="M968,360 L1312,360 Q1320,360 1320,368 L1320,388 L960,388 L960,368 Q960,360 968,360 Z" fill="#553c9a"/>
+<text x="1140.0" y="379" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Despesa</text>
+<text x="972" y="404" font-size="12" font-weight="700" fill="#b7791f" text-anchor="start">id_despesa</text>
+<text x="972" y="423" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">sq_despesa</text>
+<text x="972" y="442" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">tp_prestacao</text>
+<text x="972" y="461" font-size="12" font-weight="700" fill="#2b6cb0" text-anchor="start">sq_candidato</text>
+<text x="972" y="480" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">cd_cargo</text>
+<text x="972" y="499" font-size="12" font-weight="700" fill="#2b6cb0" text-anchor="start">id_fornecedor</text>
+<text x="972" y="518" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">data</text>
+<text x="972" y="537" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">origem_despesa</text>
+<text x="972" y="556" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">valor</text>
+<line x1="240" y1="500" x2="230" y2="400" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="221.925" y="445" width="26.150000000000002" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="235" y="455" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">usa</text>
+<line x1="400" y1="250" x2="520" y2="250" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="425.75" y="230" width="68.5" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="460" y="240" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">HTTP fetch</text>
+<line x1="710" y1="440" x2="670" y2="520" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="676.925" y="475" width="26.150000000000002" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="690" y="485" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">usa</text>
+<line x1="960" y1="650" x2="820" y2="630" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="864.825" y="630" width="50.35" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="890" y="640" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">escreve</text>
+<line x1="900" y1="200" x2="960" y2="200" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="904.825" y="180" width="50.35" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="930" y="190" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">retorna</text>
+<line x1="900" y1="300" x2="960" y2="400" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="904.825" y="345" width="50.35" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="930" y="355" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">retorna</text>
+</svg>

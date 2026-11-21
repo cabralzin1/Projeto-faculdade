@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" font-family="Segoe UI, Arial, Helvetica, sans-serif">
+<rect x="0" y="0" width="1400" height="900" fill="#ffffff"/>
+<text x="700.0" y="36" text-anchor="middle" font-size="24" font-weight="700" fill="#1a202c">MER — Modelo Entidade-Relacionamento</text>
+<text x="700.0" y="60" text-anchor="middle" font-size="13" fill="#4a5568">Banco dimensional do painel (fato + dimensões + agregados)</text>
+<defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#4a5568"/></marker>
+            <marker id="arrow-dash" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#718096"/></marker>
+            </defs>
+<rect x="60" y="90" width="280" height="190" rx="8" fill="#f7fafc" stroke="#2b6cb0" stroke-width="1.5"/>
+<path d="M68,90 L332,90 Q340,90 340,98 L340,118 L60,118 L60,98 Q60,90 68,90 Z" fill="#2b6cb0"/>
+<text x="200.0" y="109" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">dim_tempo</text>
+<text x="72" y="134" font-size="12" font-weight="700" fill="#b7791f" text-anchor="start">data</text>
+<text x="72" y="153" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">ano</text>
+<text x="72" y="172" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">mes</text>
+<text x="72" y="191" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">dia</text>
+<text x="72" y="210" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">semana</text>
+<rect x="980" y="90" width="360" height="260" rx="8" fill="#f7fafc" stroke="#2b6cb0" stroke-width="1.5"/>
+<path d="M988,90 L1332,90 Q1340,90 1340,98 L1340,118 L980,118 L980,98 Q980,90 988,90 Z" fill="#2b6cb0"/>
+<text x="1160.0" y="109" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">dim_candidato</text>
+<text x="992" y="134" font-size="12" font-weight="700" fill="#b7791f" text-anchor="start">sq_candidato</text>
+<text x="992" y="153" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">nm_candidato</text>
+<text x="992" y="172" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">nr_candidato</text>
+<text x="992" y="191" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">sg_partido</text>
+<text x="992" y="210" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">nm_partido</text>
+<text x="992" y="229" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">nr_partido</text>
+<text x="992" y="248" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">cd_cargo</text>
+<text x="992" y="267" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">ds_cargo</text>
+<text x="992" y="286" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">desatualizado</text>
+<rect x="520" y="240" width="400" height="380" rx="8" fill="#f7fafc" stroke="#2b6cb0" stroke-width="1.5"/>
+<path d="M528,240 L912,240 Q920,240 920,248 L920,268 L520,268 L520,248 Q520,240 528,240 Z" fill="#2b6cb0"/>
+<text x="720.0" y="259" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">fato_despesa</text>
+<text x="532" y="284" font-size="12" font-weight="700" fill="#b7791f" text-anchor="start">id_despesa</text>
+<text x="532" y="303" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">sq_despesa</text>
+<text x="532" y="322" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">tp_prestacao</text>
+<text x="532" y="341" font-size="12" font-weight="700" fill="#2b6cb0" text-anchor="start">sq_candidato</text>
+<text x="532" y="360" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">cd_cargo</text>
+<text x="532" y="379" font-size="12" font-weight="700" fill="#2b6cb0" text-anchor="start">id_fornecedor</text>
+<text x="532" y="398" font-size="12" font-weight="700" fill="#2b6cb0" text-anchor="start">data</text>
+<text x="532" y="417" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">origem_despesa</text>
+<text x="532" y="436" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">descricao</text>
+<text x="532" y="455" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">tipo_documento</text>
+<text x="532" y="474" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">nr_documento</text>
+<text x="532" y="493" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">turno</text>
+<text x="532" y="512" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">dt_prestacao</text>
+<text x="532" y="531" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">valor</text>
+<text x="532" y="550" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">desatualizado</text>
+<rect x="60" y="560" width="340" height="230" rx="8" fill="#f7fafc" stroke="#2b6cb0" stroke-width="1.5"/>
+<path d="M68,560 L392,560 Q400,560 400,568 L400,588 L60,588 L60,568 Q60,560 68,560 Z" fill="#2b6cb0"/>
+<text x="230.0" y="579" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">dim_fornecedor</text>
+<text x="72" y="604" font-size="12" font-weight="700" fill="#b7791f" text-anchor="start">id_fornecedor</text>
+<text x="72" y="623" font-size="12" font-weight="700" fill="#2b6cb0" text-anchor="start">cpf_cnpj</text>
+<text x="72" y="642" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">nm_fornecedor</text>
+<text x="72" y="661" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">nm_receita_federal</text>
+<text x="72" y="680" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">tipo</text>
+<text x="72" y="699" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">cnae</text>
+<text x="72" y="718" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">uf</text>
+<text x="72" y="737" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">municipio</text>
+<rect x="1040" y="600" width="320" height="170" rx="8" fill="#f7fafc" stroke="#2b6cb0" stroke-width="1.5"/>
+<path d="M1048,600 L1352,600 Q1360,600 1360,608 L1360,628 L1040,628 L1040,608 Q1040,600 1048,600 Z" fill="#2b6cb0"/>
+<text x="1200.0" y="619" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">carga</text>
+<text x="1052" y="644" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">executada_em</text>
+<text x="1052" y="663" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">dt_geracao_tse</text>
+<text x="1052" y="682" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">arquivo</text>
+<text x="1052" y="701" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">linhas_lidas</text>
+<text x="1052" y="720" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">linhas_carga</text>
+<text x="1052" y="739" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">total_declarado</text>
+<rect x="520" y="720" width="400" height="130" rx="8" fill="#f7fafc" stroke="#4a5568" stroke-width="1.5"/>
+<path d="M528,720 L912,720 Q920,720 920,728 L920,748 L520,748 L520,728 Q520,720 528,720 Z" fill="#4a5568"/>
+<text x="720.0" y="739" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Agregados (resumo_*)</text>
+<text x="532" y="764" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">resumo_candidato</text>
+<text x="532" y="783" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">resumo_cargo</text>
+<text x="532" y="802" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">resumo_partido_cargo</text>
+<text x="532" y="821" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">resumo_origem_cargo</text>
+<text x="532" y="840" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">resumo_mes_cargo</text>
+<text x="532" y="859" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">resumo_serie_cargo</text>
+<text x="532" y="878" font-size="12" font-weight="normal" fill="#1a202c" text-anchor="start">resumo_prestacao_candidato</text>
+<line x1="340" y1="185" x2="520" y2="330" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="392.725" y="252" width="74.55000000000001" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="430" y="262" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">1:N  (data)</text>
+<line x1="980" y1="215" x2="920" y2="330" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="888.525" y="265" width="122.95" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="950" y="275" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">1:N  (sq_candidato)</text>
+<line x1="400" y1="675" x2="520" y2="530" stroke="#4a5568" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="395.5" y="595" width="129.0" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="460" y="605" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">1:N  (id_fornecedor)</text>
+<line x1="1040" y1="685" x2="920" y2="560" stroke="#718096" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+<rect x="933.65" y="615" width="92.7" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="980" y="625" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">registra carga</text>
+<line x1="720" y1="620" x2="720" y2="720" stroke="#718096" stroke-width="1.5" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+<rect x="676.675" y="662" width="86.65" height="17" fill="#ffffff" opacity="0.92"/>
+<text x="720" y="672" font-size="11" font-weight="normal" fill="#4a5568" text-anchor="middle">pré-computado</text>
+</svg>

@@ -104,6 +104,8 @@ Modelo dimensional: `fato_despesa` (com `cd_cargo`) ligada às dimensões
 da importação) e as tabelas `resumo_*` (agregados por cargo pré-computados no ETL
 para leitura rápida da API).
 
+Diagramas do projeto (MER, casos de uso e classes): [DIAGRAMAS.md](DIAGRAMAS.md).
+
 ## Funcionalidades por sprint
 
 ### Sprint 1 — Front-end (entrega 14/09)
