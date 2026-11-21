@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+
+# Banco dimensional gerado pelo ETL (~670 MB) — não versionar.
+# Recrie com: python backend/etl.py --csv "<caminho>/despesas_contratadas_candidatos_2026_BRASIL.csv"
+Dados/*.db
+Dados/*.db-journal
+Dados/*.db-wal
+Dados/*.db-shm

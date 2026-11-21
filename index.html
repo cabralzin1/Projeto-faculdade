@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Financiamento de Campanha — Presidência 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="CSS/page.css" />
+  </head>
+
+  <body>
+    <aside class="menu">
+      <div class="menu__marca">
+        <p class="menu__kicker">TSE · Prestação de contas</p>
+        <h1 class="menu__logo">Financiamento de campanha</h1>
+        <p class="menu__ano"><span id="menuCargo">Presidência</span> 2026 · despesas <span id="periodoDespesas">—</span></p>
+      </div>
+
+      <nav class="menu__nav" aria-label="Seções do painel">
+        <button type="button" class="menu__item menu__item--ativo" data-view="visao">
+          Visão geral
+        </button>
+        <button type="button" class="menu__item" data-view="candidatos">Candidatos</button>
+        <button type="button" class="menu__item" data-view="comparar">Comparar</button>
+        <button type="button" class="menu__item" data-view="partidos">Partidos (geral)</button>
+      </nav>
+
+      <p class="menu__nota">
+        Este painel não influencia seu voto. Só mostra valores publicados pelo TSE.
+      </p>
+    </aside>
+
+    <div class="app">
+      <header class="topo">
+        <div>
+          <p class="topo__olho">Fonte: Dados Abertos do TSE · sem indicação de voto</p>
+          <h2 class="topo__titulo">Análise de despesa contratada declarada</h2>
+        </div>
+        <div class="filtros-topo">
+          <label>
+            Cargo
+            <select id="filtroCargo">
+              <option value="1">Presidente</option>
+            </select>
+          </label>
+          <label>
+            Partido
+            <select id="filtroPartido">
+              <option value="">Todos</option>
+            </select>
+          </label>
+          <label>
+            Prestação
+            <select id="filtroPrestacao">
+              <option value="">Todas</option>
+            </select>
+          </label>
+          <label>
+            Categoria
+            <select id="filtroCategoria">
+              <option value="">Todas</option>
+            </select>
+          </label>
+          <label>
+            De
+            <input type="date" id="filtroDataIni" />
+          </label>
+          <label>
+            Até
+            <input type="date" id="filtroDataFim" />
+          </label>
+          <label>
+            Gráfico
+            <select id="tipoGrafico">
+              <option value="horizontalBar">Barras horizontais</option>
+              <option value="bar">Barras</option>
+              <option value="doughnut">Rosca</option>
+            </select>
+          </label>
+        </div>
+      </header>
+
+      <p class="aviso" role="note">
+        <strong>Só o que o TSE divulgou.</strong>
+        Números de despesa contratada declarada até a data da carga — não são o gasto
+        total da campanha e não são recomendação de voto. Fonte:
+        <a href="https://dadosabertos.tse.jus.br/dataset/prestacao-de-contas-eleitorais-2026">Dados Abertos do TSE</a>.
+      </p>
+      <div id="avisos"></div>
+
+      <section id="view-visao" class="view">
+        <div class="grade grade--topo">
+          <article class="card card--grafico">
+            <div class="card__cabeca">
+              <h3>Despesa declarada por dia (por partido)</h3>
+              <label class="card__escala">
+                Escala
+                <select id="escalaEvolucao">
+                  <option value="dia">Diária</option>
+                  <option value="semana">Semanal</option>
+                </select>
+              </label>
+            </div>
+            <p class="card__nota">
+              Despesa contratada declarada por <code>DT_DESPESA</code>, a partir de
+              06/08/2026, empilhada por partido. Carga de 21/11/2026; prestação
+              parcial, valores podem crescer.
+            </p>
+            <div class="canvas-box canvas-box--linha">
+              <canvas id="graficoMes" aria-label="Despesa por dia e partido"></canvas>
+            </div>
+          </article>
+          <article class="card card--kpi">
+            <h3>Despesa total</h3>
+            <p id="resumoTotal" class="kpi">R$ 0,00</p>
+            <ul class="kpi-lista">
+              <li><span>Candidatos</span><strong id="resumoCandidatos">0</strong></li>
+              <li><span>Lançamentos</span><strong id="resumoLancamentos">0</strong></li>
+              <li><span>Geração TSE</span><strong id="resumoGeracao">—</strong></li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="grade grade--meio">
+          <article class="card card--grafico">
+            <h3>Por candidato</h3>
+            <div class="canvas-box">
+              <canvas id="graficoCandidatos" aria-label="Despesa por candidato"></canvas>
+            </div>
+          </article>
+          <article class="card card--grafico">
+            <h3>Participação por origem</h3>
+            <div class="canvas-box canvas-box--pizza">
+              <canvas id="graficoOrigens" aria-label="Participação por origem da despesa"></canvas>
+            </div>
+          </article>
+          <article class="card card--grafico">
+            <h3>Por partido</h3>
+            <div class="canvas-box">
+              <canvas id="graficoPartidos" aria-label="Despesa por partido"></canvas>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="view-candidatos" class="view" hidden>
+        <article class="card">
+          <div class="lista-head">
+            <h3>Despesa declarada por candidato</h3>
+            <input type="search" id="busca" placeholder="Buscar nome, número ou partido" autocomplete="off" />
+            <label class="lista-ordenacao">
+              Ordenar
+              <select id="ordenacao">
+                <option value="valor_desc">Maior valor</option>
+                <option value="valor_asc">Menor valor</option>
+                <option value="nome">Nome (A-Z)</option>
+                <option value="lancamentos">Mais lançamentos</option>
+              </select>
+            </label>
+          </div>
+          <p class="contagem" id="contagemLista"></p>
+          <div id="listaCandidatos" class="lista"></div>
+        </article>
+      </section>
+
+      <section id="view-comparar" class="view" hidden>
+        <article class="card">
+          <h3>Comparar dois candidatos</h3>
+          <p class="painel__apoio">Mesmo recorte e mesmos critérios. Escolha dois nomes distintos.</p>
+          <div class="comparar-grid">
+            <div class="campo">
+              <label for="compararA">Candidato A</label>
+              <select id="compararA"><option value="">Selecione</option></select>
+              <p class="erro" id="erroCompararA" hidden></p>
+            </div>
+            <div class="campo">
+              <label for="compararB">Candidato B</label>
+              <select id="compararB"><option value="">Selecione</option></select>
+              <p class="erro" id="erroCompararB" hidden></p>
+            </div>
+          </div>
+          <div class="acoes">
+            <button type="button" class="botao" id="botaoComparar">Comparar</button>
+            <button type="button" class="botao botao--texto" id="limparComparacao">Limpar</button>
+          </div>
+          <p class="erro" id="erroComparar" hidden></p>
+          <div id="resultadoComparacao" class="comparacao" hidden></div>
+        </article>
+      </section>
+
+      <section id="view-partidos" class="view" hidden>
+        <article class="card card--grafico">
+          <h3>Custos por partido — todos os cargos</h3>
+          <p class="card__nota">
+            Soma da despesa contratada declarada por partido, somando <b>todos os cargos</b>
+            (Presidente, Governador, Senador e Deputados). Carga de 21/11/2026.
+          </p>
+          <div class="canvas-box canvas-box--partidos">
+            <canvas id="graficoPartidosGeral" aria-label="Custos por partido"></canvas>
+          </div>
+        </article>
+        <article class="card">
+          <div class="lista-head">
+            <h3>Ranking por partido</h3>
+          </div>
+          <div id="tabelaPartidos"></div>
+        </article>
+      </section>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="JS/data.js"></script>
+    <script src="JS/site.js"></script>
+  </body>
+</html>
