@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: painel-despesas-2026
+    runtime: python
+    plan: free
+    buildCommand: |
+      mkdir -p Dados
+      python -c "import urllib.request; urllib.request.urlretrieve('https://github.com/cabralzin1/Projeto-faculdade/releases/download/v1.0.0-entrega/campanha.db', 'Dados/campanha.db')"
+    startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /
